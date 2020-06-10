@@ -27,7 +27,7 @@
                 <div class="col-12 card mt-4 p-5" id="image-display">
                     <div id="display_image"></div>
                 </div>
-                <button type="button" id="submit" class="btn btn-primary btn-block mt-2">Upload</button>
+                <button type="button" id="submit" class="btn btn-primary btn-block mt-2" disabled>Upload</button>
             </form>
 
             <div class="col-6">
