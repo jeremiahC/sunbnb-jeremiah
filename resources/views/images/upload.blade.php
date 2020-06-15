@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Image Uploader</h1>
+        <h1>Image Uploader @hello</h1>
         <div class="row p-5">
             <form class="col-6">
                 @csrf

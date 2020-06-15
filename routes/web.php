@@ -13,3 +13,5 @@
 
 Route::get('/uploader', 'ImageController@index');
 Route::post('/upload', 'ImageController@upload');
+Route::get('/maps', 'MapsController@index');
+Route::post('/maps/save-address', 'MapsController@store');
