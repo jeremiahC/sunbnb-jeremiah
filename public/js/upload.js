@@ -48,6 +48,10 @@ function upload() {
         });
 }
 
+function destroy() {
+
+}
+
 
 //  JQuery Event
 
@@ -75,4 +79,30 @@ imageInput.change(function() {
 uploadBtn.click(function(e) {
     e.preventDefault();
     upload();
+});
+
+let deleteBtn = $('.delete-btn');
+
+deleteBtn.click(function(event) {
+    event.preventDefault();
+
+    let formElementId = event.target.parentNode.getAttribute('id');
+    let imageId = event.target.getAttribute('data-image-id');
+    let confirmation = confirm('Are you sure?');
+
+    if (confirmation) {
+        $.ajax({
+            type: "DELETE",
+            url: '/image/' + imageId,
+            data: $('#' + formElementId).serialize(),
+            success: function({id, message}) {
+                $('#image-' + id).remove();
+                $('#delete-' + id).remove();
+                toastr.success('Successfully uploaded!')
+            },
+            error: function(error) {
+                toastr.error('There is an error occured')
+            }
+        })
+    }
 });

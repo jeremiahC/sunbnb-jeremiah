@@ -30,4 +30,10 @@ class ImageController extends Controller
 
         return response()->json(['success']);
     }
+
+    public function destroy(Request $request, Image $image)
+    {
+        $image->delete();
+        return response()->json(['message' => 'success', 'id' => $image->id]);
+    }
 }

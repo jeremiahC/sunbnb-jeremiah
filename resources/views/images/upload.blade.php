@@ -34,8 +34,12 @@
                 <h3>Image here</h3>
                 @if(count($images) > 0)
                     <div class="col-12 card p-3">
-                        @foreach ($images as $image)
-                            <img src="{{ asset($image->file_location) }}" alt="" width="100%" class="my-3">                    
+                        @foreach ($images as $key => $image)
+                            <img src="{{ asset($image->file_location) }}" id="image-{{$image->id}}" alt="" width="100%" class="my-3">
+                            <form id="delete-form-{{$key}}">
+                                @csrf
+                                <button class="btn btn-danger delete-btn" id="delete-{{ $image->id }}" data-image-id="{{ $image->id }}">Delete</button>
+                            </form>
                         @endforeach
                     </div>
                 @else
