@@ -16,7 +16,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key={{ config('services.googlemaps.api_key') }}"></script>
     <script>
         function initialize() {
-            var location = { lat: {{ $latestPlace->lat }}, lng: {{ $latestPlace->long }} };
+            var location = { lat: 0, lng: 0 };
     
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: location,
