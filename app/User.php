@@ -16,8 +16,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email',
     ];
+    
 
     /**
      * The attributes that should be hidden for arrays.
@@ -36,4 +37,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function gravatar()
+    {
+        $hash = md5(strtolower(trim('jeremiah.caballero.jc@gmail.com')));
+        return "http://www.gravatar.com/avatar/$hash";
+    }
+
+    public function account()
+    {
+        return $this->hasOne('App\SocialAccount');
+    }
 }

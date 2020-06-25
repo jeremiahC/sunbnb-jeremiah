@@ -17,3 +17,15 @@ Route::delete('/image/{image}',  'ImageController@destroy');
 
 Route::get('/maps', 'MapsController@index');
 Route::post('/maps/save-address', 'MapsController@store');
+
+
+Route::get('user-form', 'UserController@showForm');
+Route::post('user/store', 'UserController@store');
+
+
+
+Route::get('/', 'UserController@index');
+Route::get('/auth/redirect', 'SocialAuthController@redirect')->name('facebook.redirect');
+
+Route::get('logout', 'UserController@logout');
+Route::get('/callback/{provider}', 'SocialAuthController@callback')->name('facebook.callback');

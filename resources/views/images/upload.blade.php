@@ -50,6 +50,7 @@
             </div>
         </div>
 
+        <img src="{{$profImg}}" alt="">
         
     </div>
     @jquery 

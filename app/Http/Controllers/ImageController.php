@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Image;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -12,7 +13,8 @@ class ImageController extends Controller
     public function index()
     {
         $images = Image::all();
-        return view('images.upload', compact('images'));
+        $profImg = User::find(1)->gravatar();
+        return view('images.upload', compact('images', 'profImg'));
     }
 
     public function upload(Request $request)
