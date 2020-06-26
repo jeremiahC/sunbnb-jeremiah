@@ -29,3 +29,14 @@ Route::get('/auth/redirect', 'SocialAuthController@redirect')->name('facebook.re
 
 Route::get('logout', 'UserController@logout');
 Route::get('/callback/{provider}', 'SocialAuthController@callback')->name('facebook.callback');
+
+// Profile
+Route::get('profile', 'UserController@showProfile');
+
+// Search
+Route::get('filter', 'FilterController@index');
+// Route::post('filter', 'FilterController@filter');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

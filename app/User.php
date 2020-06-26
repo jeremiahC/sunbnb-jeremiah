@@ -19,6 +19,7 @@ class User extends Authenticatable
         'name', 'email',
     ];
     
+    protected $table = 'users';
 
     /**
      * The attributes that should be hidden for arrays.
@@ -38,10 +39,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function gravatar()
+    public function gravatar($size = 150)
     {
-        $hash = md5(strtolower(trim('jeremiah.caballero.jc@gmail.com')));
-        return "http://www.gravatar.com/avatar/$hash";
+        $hash = md5(strtolower(trim($this->attributes['email'])));
+        return "http://www.gravatar.com/avatar/$hash?s=$size";
     }
 
     public function account()

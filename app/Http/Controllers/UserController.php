@@ -14,6 +14,13 @@ class UserController extends Controller
         return view('home');
     }
 
+    public function showProfile()
+    {
+        $avatar = Auth::user()->gravatar(500);
+
+        return view('profile', compact('avatar'));
+    }
+
     public function logout()
     {
         Auth::logout();
