@@ -18,6 +18,7 @@
                             @foreach ($errors->all() as $error)
                                 <li>{{ $error }}</li>
                             @endforeach
+hello
                         </ul>
                     </div>
                 @endif
