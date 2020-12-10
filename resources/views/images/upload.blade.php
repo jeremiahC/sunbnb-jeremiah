@@ -50,7 +50,7 @@
             </div>
         </div>
 
-        <img src="{{$profImg}}" alt="">
+        {{-- <img src="{{$profImg}}" alt=""> --}}
         
     </div>
     @jquery 
