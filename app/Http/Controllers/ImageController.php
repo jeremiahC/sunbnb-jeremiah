@@ -13,8 +13,8 @@ class ImageController extends Controller
     public function index()
     {
         $images = Image::all();
-        $profImg = User::find(1)->gravatar();
-        return view('images.upload', compact('images', 'profImg'));
+        // $profImg = User::find(1)->gravatar();
+        return view('images.upload', compact('images'));
     }
 
     public function upload(Request $request)
